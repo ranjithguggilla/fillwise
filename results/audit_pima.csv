@@ -1,0 +1,9 @@
+column,missing_rate,suspect_zero_rate,mcar_probe_auc
+insulin,0.487,0.0,0.851
+skin_thickness,0.2956,0.0,0.91
+blood_pressure,0.0456,0.0,0.882
+bmi,0.0143,0.0,
+glucose,0.0065,0.0,
+pregnancies,0.0,0.0,
+pedigree,0.0,0.0,
+age,0.0,0.0,
