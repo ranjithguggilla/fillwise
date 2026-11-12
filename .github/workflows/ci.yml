@@ -13,12 +13,13 @@ jobs:
       - uses: astral-sh/setup-uv@v5
         with:
           python-version: "3.11"
+          enable-cache: true
       - name: Install
-        run: uv pip install --system -e ".[dev]"
+        run: uv sync --extra dev
       - name: Lint
-        run: ruff check src tests scripts
+        run: uv run ruff check src tests scripts
       - name: Tests
-        run: pytest -q
+        run: uv run pytest -q
 
   package:
     needs: checks
@@ -29,6 +30,7 @@ jobs:
       - uses: astral-sh/setup-uv@v5
         with:
           python-version: "3.11"
+          enable-cache: true
       - name: Build wheel
         run: uv build
       - uses: actions/upload-artifact@v4
